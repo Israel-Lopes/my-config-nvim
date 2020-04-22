@@ -6,17 +6,22 @@ call plug#begin()
   Plug 'junegunn/fzf.vim'
   Plug 'w0rp/ale'
   Plug 'jiangmiao/auto-pairs'
-  Plug 'SirVer/ultisnips'
-  Plug 'honza/vim-snippets'
-  Plug 'ncm2/ncm2'
-  Plug 'roxma/nvim-yarp'
-call plug#end()
+ "Plug 'SirVer/ultisnips'
+ "Plug 'honza/vim-snippets'
+ 
+ "AUTOCOMPLET  
+   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+   Plug 'wokalski/autocomplete-flow'
+   " For func argument completion
+   Plug 'Shougo/neosnippet'
+   Plug 'Shougo/neosnippet-snippets'
 
-"enable ncm2 for all buffers
- autocmd BufEnter * call ncm2#enable_for_buffer()
+ call plug#end()
 
-"IMPORTANT: :help Ncm2PopupOpen for more information
- set completeopt=noinsert,menuone,noselect
+"AUTOCOMPLET CONFIG
+  let g:deoplete#enable_at_startup = 1
+  " neosnippet
+  let g:neosnippet#enable_completed_snippet = 1
 
 colorscheme gruvbox
 set background=dark
@@ -31,8 +36,15 @@ nnoremap <leader>; A;<esc>
 nnoremap <leader>ev :vsplit ~/.config/nvim/init.vim<cr>
 nnoremap <leader>sv :source ~/.config/nvim/init.vim<cr>
 
-nnoremap <c-p> :Files<cr>
-nnoremap <c-f> :Ag<space>
+"SEARCH
+  nnoremap <c-p> :Files<cr>
+  nnoremap <c-f> :Ag<space>
+
+"SAVE
+  nnoremap <c-s> :w<cr>
+
+"QUIT
+  nnoremap <c-x> :q<cr>
 
 let g:UltiSnipsEditSplit = 'vertical'
 let g:UltiSnipsSnippetsDir = '~/.config/nvim/UltiSnips'
