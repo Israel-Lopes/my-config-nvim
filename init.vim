@@ -1,5 +1,6 @@
 call plug#begin()
-  Plug 'morhetz/gruvbox'
+ "Thema gruvbox
+     Plug 'morhetz/gruvbox'
   Plug 'terryma/vim-multiple-cursors'
   Plug 'sheerun/vim-polyglot'
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -8,10 +9,8 @@ call plug#begin()
   Plug 'jiangmiao/auto-pairs'
   Plug 'SirVer/ultisnips'
   Plug 'honza/vim-snippets'
-  
  "Scroller
     Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-
  "AUTOCOMPLET  
     Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
     Plug 'wokalski/autocomplete-flow'

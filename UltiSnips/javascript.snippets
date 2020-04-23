@@ -1,24 +1,27 @@
 snippet fun "a function" b
 function $1 () {
-	$0
+  $0
 }
 endsnippet
 
 snippet => "a () =>" b
 $1 () => {
-	$0
+  $0
 }
 endsnippet
 
 snippet /** "/**a*/"
 /**
-*$1
-*
-*
-*/
+ *  $1
+ *
+ *
+ */
 endsnippet
 
 snippet console "console.log('a')"
 console.log($1);
 endsnippet
 
+snippet require "const a = require('b')"
+const $1 = require('$0');
+endsnippet
