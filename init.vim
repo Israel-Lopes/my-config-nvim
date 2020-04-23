@@ -8,12 +8,16 @@ call plug#begin()
   Plug 'jiangmiao/auto-pairs'
   Plug 'SirVer/ultisnips'
   Plug 'honza/vim-snippets'
+  
+ "Scroller
+    Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+
  "AUTOCOMPLET  
-   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-   Plug 'wokalski/autocomplete-flow'
-   " For func argument completion
-   Plug 'Shougo/neosnippet'
-   Plug 'Shougo/neosnippet-snippets'
+    Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+    Plug 'wokalski/autocomplete-flow'
+ "For func argument completion
+    Plug 'Shougo/neosnippet'
+    Plug 'Shougo/neosnippet-snippets'
 call plug#end()
 
 "Base Configuration---------
@@ -24,19 +28,13 @@ call plug#end()
    set relativenumber
    set inccommand=split
 
-"NEOSNIPT AUTOCOMPLET CONFIG----------
-   let g:deoplete#enable_at_startup = 1
-   " neosnippet
-   let g:neosnippet#enable_completed_snippet = 1
-   " :help neosnippet-snippet-syntax
-   " Create snipts: ':NeoSnippetEdit'
-
-
 let mapleader="\<space>"
 nnoremap <leader>; A;<esc>
 nnoremap <leader>ev :vsplit ~/.config/nvim/init.vim<cr>
 nnoremap <leader>sv :source ~/.config/nvim/init.vim<cr>
 
+"Auto-open NERDTree
+   autocmd VimEnter * NERDTree
 
 "SEARCH------
    nnoremap <c-p> :Files<cr>
