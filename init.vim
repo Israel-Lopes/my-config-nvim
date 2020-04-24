@@ -19,6 +19,10 @@ call plug#begin()
     Plug 'Shougo/neosnippet-snippets'
 call plug#end()
 
+"Fzf - Skips search files
+command! -bang -nargs=*  All
+  \ call fzf#run(fzf#wrap({'source': 'rg --files --hidden --no-ignore-vcs --glob "!{node_modules/*,.git/*}"', 'down': '40%', 'options': '--expect=ctrl-t,ctrl-x,ctrl-v --multi --reverse' }))
+
 "Base Configuration---------
    colorscheme gruvbox
    set number
@@ -32,7 +36,10 @@ nnoremap <leader>; A;<esc>
 nnoremap <leader>ev :vsplit ~/.config/nvim/init.vim<cr>
 nnoremap <leader>sv :source ~/.config/nvim/init.vim<cr>
 
-"Auto-open NERDTree
+"Fzf search
+nnoremap <silent> <leader>o :All<cr>
+
+"Auto-open scroll NERDTree
    autocmd VimEnter * NERDTree
 
 "SEARCH------
