@@ -16,7 +16,7 @@ call plug#begin()
     Plug 'wokalski/autocomplete-flow'
  "For func argument completion
     Plug 'Shougo/neosnippet'
-    Plug 'Shougo/neosnippet-snippets'
+    Plug 'Shougo/neosnippet-snippets' 
 call plug#end()
 
 "Fzf - Skips search files
@@ -30,6 +30,12 @@ command! -bang -nargs=*  All
    set hidden
    set relativenumber
    set inccommand=split
+
+   "Two space tab
+   set expandtab
+   set shiftwidth=2
+   set softtabstop=2
+
 
 let mapleader="\<space>"
 nnoremap <leader>; A;<esc>
@@ -52,8 +58,23 @@ nnoremap <silent> <leader>o :All<cr>
 "QUIT------
    nnoremap <c-x> :q<cr>
 
-let g:UltiSnipsEditSplit = 'vertical'
-let g:UltiSnipsSnippetsDir = '~/.config/nvim/UltiSnips'
+"Deoplete - view autocomplet suggestion
+   let g:deoplete#enable_at_startup = 1
+
+"UltiSnipets
+   " Trigger configuration. Do not use <tab> if you use
+   " https://github.com/Valloric/YouCompleteMe.
+   let g:UltiSnipsExpandTrigger='<tab>'
+
+   " shortcut to go to next position
+   let g:UltiSnipsJumpForwardTrigger='<c-j>'
+
+   " shortcut to go to previous position
+   let g:UltiSnipsJumpBackwardTrigger='<c-k>'
+   let g:UltiSnipsEditSplit = 'vertical'
+   let g:UltiSnipsSnippetsDir = '~/.config/nvim/UltiSnips'
+
+
 
 
 " Pesquisa no arquivo :%s/costa/const/g 
