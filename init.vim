@@ -1,14 +1,22 @@
 call plug#begin()
+ Plug 'w0rp/ale'
  "Thema gruvbox
      Plug 'morhetz/gruvbox'
-  Plug 'terryma/vim-multiple-cursors'
-  Plug 'sheerun/vim-polyglot'
-  Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-  Plug 'junegunn/fzf.vim'
-  Plug 'w0rp/ale'
-  Plug 'jiangmiao/auto-pairs'
-  Plug 'SirVer/ultisnips'
-  Plug 'honza/vim-snippets'
+ "Multiple selection    
+    Plug 'terryma/vim-multiple-cursors'
+ "Multi linguage
+    Plug 'sheerun/vim-polyglot'
+ "Search fzf
+    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+    Plug 'junegunn/fzf.vim'
+ "Complet pairs
+    Plug 'jiangmiao/auto-pairs'
+ "For func argument completion 
+    Plug 'SirVer/ultisnips'
+ "Status Bar
+    Plug 'bling/vim-airline'
+ "Snipets   
+    Plug 'honza/vim-snippets'
  "Scroller
     Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
  "AUTOCOMPLET  
