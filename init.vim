@@ -82,7 +82,15 @@ nnoremap <silent> <leader>o :All<cr>
    let g:UltiSnipsEditSplit = 'vertical'
    let g:UltiSnipsSnippetsDir = '~/.config/nvim/UltiSnips'
 
+"Update nerdtree
+   fun! ToggleNERDTreeWithRefresh()
+       :NERDTreeToggle 
+       if(exists("b:NERDTreeType") == 1)
+           call feedkeys("R")  
+       endif   
+   endf 
 
+   nmap <silent> <c-l> :call ToggleNERDTreeWithRefresh()<cr>  
 
 
 " Pesquisa no arquivo :%s/costa/const/g 
