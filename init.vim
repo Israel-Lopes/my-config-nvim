@@ -19,13 +19,21 @@ call plug#begin()
     Plug 'honza/vim-snippets'
  "Scroller
     Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+    "Comenter
+    Plug 'scrooloose/nerdcommenter'
  "AUTOCOMPLET  
     Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
     Plug 'wokalski/autocomplete-flow'
  "For func argument completion
     Plug 'Shougo/neosnippet'
     Plug 'Shougo/neosnippet-snippets' 
-call plug#end()
+ "Ident line
+    Plug 'Yggdroot/indentLine'
+ "Tmux navigator
+    Plug 'christoomey/vim-tmux-navigator'
+ "Sintaxe js  
+    Plug 'pangloss/vim-javascript'
+ call plug#end()
 
 "Fzf - Skips search files
 command! -bang -nargs=*  All
@@ -49,6 +57,22 @@ let mapleader="\<space>"
 nnoremap <leader>; A;<esc>
 nnoremap <leader>ev :vsplit ~/.config/nvim/init.vim<cr>
 nnoremap <leader>sv :source ~/.config/nvim/init.vim<cr>
+
+"IDENTLINE Config
+  " Vim
+  "let g:indentLine_color_term = 239
+
+  " GVim
+  "let g:indentLine_color_gui = '#A4E57E'
+
+  " none X terminal
+  "let g:indentLine_color_tty_light = 7 " (default: 4)
+  "let g:indentLine_color_dark = 1 " (default: 2)
+
+  " Background (Vim, GVim)
+  "let g:indentLine_bgcolor_term = 202
+  "let g:indentLine_bgcolor_gui = '#FF5F00'
+
 
 "Fzf search
 nnoremap <silent> <leader>o :All<cr>
