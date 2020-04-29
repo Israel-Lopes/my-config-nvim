@@ -85,7 +85,7 @@ nnoremap <silent> <leader>o :All<cr>
    nnoremap <c-f> :Ag<space>
 
 "SAVE------
-   nnoremap <c-s> :w<cr>
+   nnoremap  <c-s> :w<cr>
 
 "QUIT------
    nnoremap <c-x> :q<cr>

@@ -51,6 +51,20 @@ const $0Schema = mongoose.Schema({
   $1
 });
 endsnippet
+
+snippet mongoose.connect "Mongoose connect URI"
+const URI = '$1';
+const NOERRO = {
+  useUnifiedTopology: true,
+  useNewUrlParser: true
+};
+mongoose.Promise = global.Promise;
+mongoose.connect(URI, NOERRO).then(() => {
+  console.log("Connect mongo");
+}).catch((err) => {
+  console.log("Error in connect" + err);
+});
+endsnippet
 #============================================================================
  #                                                                    EXPRESS
 #============================================================================
