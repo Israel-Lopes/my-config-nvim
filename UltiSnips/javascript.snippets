@@ -1,16 +1,20 @@
-snippet fun "a function" b
+
+#============================================================================
+ #                                                                     NODEJS
+#============================================================================
+snippet fun "a function" w
 function $1 () {
   $0
 }
 endsnippet
 
-snippet => "a () =>" b
+snippet => "a () =>" w
 $1 () => {
   $0
 }
 endsnippet
 
-snippet /** "/**a*/"
+snippet /** "/**a*/" b
 /**
  *  $1
  *
@@ -18,10 +22,49 @@ snippet /** "/**a*/"
  */
 endsnippet
 
-snippet console "console.log('a')"
+snippet console "console.log('a')" b
 console.log($1);
 endsnippet
 
-snippet require "const a = require('b')"
-const $1 = require('$0');
+snippet require "const a = require('b')" b
+const $1 = require('$1');
 endsnippet
+#============================================================================
+ #                                                                   MONGOOSE
+#============================================================================
+snippet router.get "router.get" b
+router.get('/$1', (req, res) => {
+  $0
+});
+endsnippet
+
+snippet res.send "res.send('')" b
+res.send($1);
+endsnippet
+
+snippet res.render "res.render('a')" b
+res.render('$1');
+endsnippet
+
+snippet mongoose.Schema "create schema: mongoose.Schema({a})" b
+const $0Schema = mongoose.Schema({
+  $1
+});
+endsnippet
+#============================================================================
+ #                                                                    EXPRESS
+#============================================================================
+snippet app.use "app.use(a)" b
+app.use($1);
+endsnippet
+
+snippet express.static "express.static(a)" w
+express.static($1)
+endsnippet
+
+snippet path.join "path.join(__dirname, 'a')" w
+path.join(__dirname, '$1')
+endsnippet
+#============================================================================
+ #
+#============================================================================

@@ -1,0 +1,13 @@
+snippet mongoose.connect ""
+const URI = "";
+const NOERRO = {
+  useUnifiedTopology: true,
+  useNewUrlParser: true
+};
+mongoose.Promise = global.Promise;
+mongoose.connect(URI, NOERRO).then(() => {
+  console.log("Connect mongo");
+  }).catch((err) => {
+  console.log("Error in connect" + err);
+});
+endsnippet
