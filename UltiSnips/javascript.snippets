@@ -29,27 +29,29 @@ endsnippet
 snippet require "const a = require('b')" b
 const $1 = require('$1');
 endsnippet
+
+snippet then "then() =>" w
+then(() => {
+  $1
+})
+endsnippet
+
+snippet catch "catch(err) =>" w
+catch((err) => {
+  $1
+})
+endsnippet
 #============================================================================
  #                                                                   MONGOOSE
 #============================================================================
-snippet router.get "router.get" b
-router.get('/$1', (req, res) => {
-  $0
-});
-endsnippet
-
-snippet res.send "res.send('')" b
-res.send($1);
-endsnippet
-
-snippet res.render "res.render('a')" b
-res.render('$1');
-endsnippet
-
 snippet mongoose.Schema "create schema: mongoose.Schema({a})" b
 const $0Schema = mongoose.Schema({
   $1
 });
+endsnippet
+
+snippet mongoose.model "mongoose model" b
+mongoose.model('$1', $2);
 endsnippet
 
 snippet mongoose.connect "Mongoose connect URI"
@@ -68,6 +70,27 @@ endsnippet
 #============================================================================
  #                                                                    EXPRESS
 #============================================================================
+snippet router.get "router.get" b
+router.get('/$1', (req, res) => {
+  $2
+});
+endsnippet
+
+snippet router.post "router post" b
+router.post('/$1', (req, res) => {
+  $2
+});
+endsnippet
+
+snippet res.send "res.send('')" b
+res.send($1);
+endsnippet
+
+snippet res.render "res.render('a')" b
+res.render('$1');
+endsnippet
+
+
 snippet app.use "app.use(a)" b
 app.use($1);
 endsnippet

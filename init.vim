@@ -1,5 +1,6 @@
 call plug#begin()
- Plug 'w0rp/ale'
+ "Show error
+     Plug 'w0rp/ale'
  "Thema gruvbox
      Plug 'morhetz/gruvbox'
  "Multiple selection    
@@ -33,6 +34,12 @@ call plug#begin()
     Plug 'christoomey/vim-tmux-navigator'
  "Sintaxe js  
     Plug 'pangloss/vim-javascript'
+ "NeoJs
+    let mapleader = ","                                                                                               
+    let g:mapleader = ","   
+    " .... and
+    Plug 'vimlab/neojs'
+    Plug 'shougu/unite.vim'
  call plug#end()
 
 "Fzf - Skips search files
@@ -72,7 +79,7 @@ nnoremap <leader>sv :source ~/.config/nvim/init.vim<cr>
   " Background (Vim, GVim)
   "let g:indentLine_bgcolor_term = 202
   "let g:indentLine_bgcolor_gui = '#FF5F00'
-
+  
 
 "Fzf search
 nnoremap <silent> <leader>o :All<cr>
