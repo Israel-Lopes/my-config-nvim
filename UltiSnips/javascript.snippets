@@ -41,6 +41,24 @@ catch((err) => {
   $1
 })
 endsnippet
+
+snippet pp "increment a(b);" w
+$1($2);
+endsnippet
+
+snippet else "else {a}" w
+else{
+  $1
+}
+endsnippet
+
+snippet req.flash "req.flash(a, b)" b
+req.flash('$1', '$2');
+endsnippet
+
+snippet res.redirect "res.redirect(a)" b
+res.redirect('$1');
+endsnippet
 #============================================================================
  #                                                                   MONGOOSE
 #============================================================================
@@ -67,12 +85,28 @@ mongoose.connect(URI, NOERRO).then(() => {
   console.log("Error in connect" + err);
 });
 endsnippet
+
+snippet new.schema "create a new Schema" b
+const $1 = new Schema({
+  
+});
+
+mongoose.model('', $1);
+endsnippet
+
 #============================================================================
  #                                                                    EXPRESS
 #============================================================================
+
+snippet app.get "app.get" b
+app.get('/$1', (req, res) => {
+  
+});
+endsnippet
+
 snippet router.get "router.get" b
-router.get('/$1', (req, res) => {
-  $2
+router.get('/$0', (req, res) => {
+  $1
 });
 endsnippet
 
@@ -102,6 +136,36 @@ endsnippet
 snippet path.join "path.join(__dirname, 'a')" w
 path.join(__dirname, '$1')
 endsnippet
+
+snippet express.init "initialized basic connection" b
+const express = require('express');
+const app = express();
+
+app.get('/',(req, res) => {
+  res.send('Main Route');
+});
+
+const PORT = 3000;
+app.listen(PORT, () => {
+  console.log('Server initialized on port : ' + PORT);
+});
+endsnippet
+
+snippet :: "$1: {}" b
+$1: {
+  :
+}
+endsnippet
+
 #============================================================================
- #
+ #                                                            EXPRESS-SESSION
 #============================================================================
+
+snippet session.init "init express-session" w
+app.use(session({
+  secret: "$1",
+  resave: true,
+  saveUninitialized: true
+}));
+endsnippet
+

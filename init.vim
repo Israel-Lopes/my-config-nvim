@@ -46,6 +46,8 @@ call plug#begin()
     Plug 'mxw/vim-jsx'
     Plug 'othree/javascript-libraries-syntax.vim'
     Plug 'pangloss/vim-javascript'
+ "Autocomplet
+    "Plug 'neoclide/coc.nvim', {'branch': 'release'}
  "NeoJs
     "let mapleader = ","                                                                                               
     "let g:mapleader = ","   
@@ -137,7 +139,6 @@ Plug 'bfredl/nvim-miniyank'
 Plug 'junegunn/vim-peekaboo'
 Plug 'jlanzarotta/bufexplorer'
     call plug#end()
-
 
 "Fzf - Skips search files
 command! -bang -nargs=*  All
@@ -948,3 +949,4 @@ call textobj#user#plugin('thinkquotes', {
 
 " enable debug mode
 " set vbs=1
+
