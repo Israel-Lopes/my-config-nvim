@@ -1,4 +1,8 @@
 call plug#begin()
+ "ES2015 code snippets (Optional)
+    Plug 'epilande/vim-es2015-snippets'
+ "React code snippets
+    Plug 'epilande/vim-react-snippets'
  "Devcons
      Plug 'ryanoasis/vim-devicons'
  "Nerdtree syntax
