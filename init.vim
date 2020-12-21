@@ -163,6 +163,8 @@ command! -bang -nargs=*  All
    set shiftwidth=2
    set softtabstop=2
 
+  "Have K split lines the way J joins lines
+  nnoremap <expr>K getline('.')[col('.')-1]==' ' ? "r<CR>" : "i<CR><Esc>"
 
 let mapleader="\<space>"
 nnoremap <leader>; A;<esc>
@@ -745,17 +747,17 @@ endif
 " }
 
 " PHPCOMPLETE {
-        if exists('g:phpcomplete')
-            let g:phpcomplete_cache_taglists = 0
-        endif
+"        if exists('g:phpcomplete')
+"           let g:phpcomplete_cache_taglists = 0
+"        endif
 " }
 
 " PHPCOMPLETE-EXTENDED {
-        if exists('g:phpcomplete_extended')
+"        if exists('g:phpcomplete_extended')
 " this plugin provides autocompletion for composer/symfony projects
-            autocmd  FileType  php setlocal omnifunc=phpcomplete_extended#CompletePHP
-            let g:phpcomplete_index_composer_command='/usr/local/bin/composer'
-        endif
+"            autocmd  FileType  php setlocal omnifunc=phpcomplete_extended#CompletePHP
+"            let g:phpcomplete_index_composer_command='/usr/local/bin/composer'
+"        endif
 " }
 
 " SHORTCUTS {
